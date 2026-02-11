@@ -13,7 +13,7 @@
    - name: creating ec2-instances
      amazon.aws.ec2-instance:
      instance_type: "t3.micro"
-     security_gruop: "{{sg_id}}"
+     security_gruop: "{{sg-id}}"
      image_id: "{{ami-id}}"
      name: "{{item}}-{{env}}"
 
