@@ -1,0 +1,31 @@
+# creation of ec2-instances and route 53 
+- name: creation of ec2-instances
+  hosts: all #local if we have inventory file
+  connection: local
+  vars:
+   sg-id: "sg-08215fd9bc2dcf991"
+   ami-id: "ami-0220d79f3f480ecf5"
+   env: "dev"
+   instances:
+     -mongodb
+     -catalouge
+  tasks:
+   - name: creating ec2-instances
+     amazon.aws.ec2-instance:
+     instance_type: "t3.micro"
+     security_gruop: "{{sg_id}}"
+     image_id: "{{ami-id}}"
+     name: "{{item}}-{{env}}"
+
+     tags:
+       Project: roboshop
+       Environment: "{{env}}"
+       component: "{item}}"
+       Name: "{{item}}-{{env}}"
+       
+     loop: " {{instances}}"
+     register: ec2_output
+      
+   - name: print ec2-instances output
+     ansible.builtin.debug:
+       msg: "{{ec2-output}}"
