@@ -11,7 +11,7 @@
      -catalouge
   tasks:
    - name: "creating ec2_instances"
-     amazon.aws.ec2-instance:
+     amazon.aws.ec2_instance:
        instance_type: "t3.micro"
        security_gruop: "{{sg_id}}"
        image_id: "{{ami_id}}"
