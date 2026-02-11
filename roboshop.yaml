@@ -23,7 +23,7 @@
        - Environment: "{{env}}"
        - component: "{item}}"
        - Name: "{{item}}-{{env}}"
-     loop: " {{instances}}"
+     loop: "{{instances}}"
      register: ec2_output
       
    - name: "print ec2-instances output"
