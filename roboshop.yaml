@@ -10,7 +10,7 @@
      -mongodb
      -catalouge
   tasks:
-   - name: creating ec2-instances
+   - name: "creating ec2-instances"
      amazon.aws.ec2-instance:
      instance_type: "t3.micro"
      security_gruop: "{{sg_id}}"
@@ -26,6 +26,6 @@
      loop: " {{instances}}"
      register: ec2_output
       
-   - name: print ec2-instances output
+   - name: "print ec2-instances output"
      ansible.builtin.debug:
        msg: "{{ec2-output}}"
