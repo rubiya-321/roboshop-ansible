@@ -8,7 +8,7 @@
     env: "dev"
     instances:
       - mongodb
-      - catalouge
+      - catalogue
   tasks:
    - name: "creating ec2_instances"
      amazon.aws.ec2_instance:
