@@ -21,7 +21,7 @@
 
        - Project: roboshop
        - Environment: "{{env}}"
-       - component: "{item}}"
+       - component: "{{item}}"
        - Name: "{{item}}-{{env}}"
      loop: "{{instances}}"
      register: ec2_output
