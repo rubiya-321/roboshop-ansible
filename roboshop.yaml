@@ -6,6 +6,7 @@
     sg_id: "sg-08215fd9bc2dcf991"
     ami_id: "ami-0220d79f3f480ecf5"
     env: "dev"
+    action: "create"
     instances:
       - mongodb
       - catalogue
