@@ -3,8 +3,8 @@
   hosts: all #local if we have inventory file
   connection: local
   vars:
-   sg-id: "sg-08215fd9bc2dcf991"
-   ami-id: "ami-0220d79f3f480ecf5"
+   sg_id: "sg-08215fd9bc2dcf991"
+   ami_id: "ami-0220d79f3f480ecf5"
    env: "dev"
    instances:
      -mongodb
@@ -13,8 +13,8 @@
    - name: creating ec2-instances
      amazon.aws.ec2-instance:
      instance_type: "t3.micro"
-     security_gruop: "{{sg-id}}"
-     image_id: "{{ami-id}}"
+     security_gruop: "{{sg_id}}"
+     image_id: "{{ami_id}}"
      name: "{{item}}-{{env}}"
 
      tags:
