@@ -3,12 +3,12 @@
   hosts: all #local if we have inventory file
   connection: local
   vars:
-   sg_id: "sg-08215fd9bc2dcf991"
-   ami_id: "ami-0220d79f3f480ecf5"
-   env: "dev"
-   instances:
-     - mongodb
-     - catalouge
+    sg_id: "sg-08215fd9bc2dcf991"
+    ami_id: "ami-0220d79f3f480ecf5"
+    env: "dev"
+    instances:
+      - mongodb
+      - catalouge
   tasks:
    - name: "creating ec2_instances"
      amazon.aws.ec2_instance:
